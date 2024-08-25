@@ -122,6 +122,10 @@ a {
   transition: .3s ease-out;
   position: relative;
 
+  @media (max-width: 1440px) {
+    font-size: 20px;
+  }
+
   &::after {
     content: "";
     position: absolute;

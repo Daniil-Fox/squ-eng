@@ -15,6 +15,10 @@
     position: relative;
     z-index: 2;
     max-width: 750px;
+
+    @media (max-width: 1440px) {
+      max-width: 555px;
+    }
   }
 
   &__title {

@@ -129,3 +129,33 @@ if(modal){
     modal.classList.remove('active')
   })
 }
+
+
+
+const menuBtn = document.querySelector('.header__burger')
+const menu = document.querySelector('.menu')
+const menuItems = menu.querySelectorAll('.menu-nav__link')
+
+const headerContacts = document.querySelector('.header__contacts')
+menuBtn.addEventListener('click', e => {
+  e.preventDefault()
+  let isActive = menu.classList.toggle('active')
+  menuBtn.classList.toggle('active')
+
+  if(isActive){
+    document.body.style.overflow = 'hidden'
+    headerContacts.style.display = 'none'
+  } else {
+    document.body.style.overflow = null
+    setTimeout(() => {
+      headerContacts.style.display = null
+    }, 250)
+  }
+})
+
+menuItems.forEach(item => {
+  item.addEventListener('click', e => {
+    menuItems.forEach(el => el.classList.remove('active'))
+    item.classList.add('active')
+  })
+})
