@@ -1,0 +1,78 @@
+<section class="quiz">
+  <div class="container">
+    <h2 class="title2 quiz__title">
+      Получите <span>мини-курс</span> по постановке речи +
+      <span>первый урок бесплатно!</span>
+    </h2>
+    <p class="quiz__desc">
+      Ответьте на 5 вопросов и мы составим программу, идеально соответствующую
+      потребностям вашего ребенка.
+    </p>
+    <div class="quiz__wrapper">
+      <form action="#" class="quiz__slider swiper swiper-no-swiping">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide quiz__slide">
+            <span class="quiz__counter">1/5</span>
+            <div class="quiz__content">
+              <div class="quiz__capture">Сколько лет вашему ребенку?</div>
+              <div class="quiz__text">Выберите один вариант ответа</div>
+              <div class="quiz__input-group">
+                <label class="quiz__inp">
+                  <input
+                    type="radio"
+                    name="Возраст_ребенка"
+                    value="4-6 лет"
+                    class="visually-hidden"
+                  />
+                  <div></div>
+                  4–6 лет
+                </label>
+                <label class="quiz__inp">
+                  <input
+                    type="radio"
+                    name="Возраст_ребенка"
+                    value="7-8 лет"
+                    class="visually-hidden"
+                  />
+                  <div></div>
+                  7-8 лет
+                </label>
+                <label class="quiz__inp">
+                  <input
+                    type="radio"
+                    name="Возраст_ребенка"
+                    value="9-10 лет"
+                    class="visually-hidden"
+                  />
+                  <div></div>
+                  9-10 лет
+                </label>
+                <label class="quiz__inp">
+                  <input
+                    type="radio"
+                    name="Возраст_ребенка"
+                    value="11-12 лет"
+                    class="visually-hidden"
+                  />
+                  <div></div>
+                  11-12 лет
+                </label>
+              </div>
+            </div>
+          </div>
+          @include('./quiz-sec.html') @include('./quiz-th.html')
+          @include('./quiz-four.html') @include('./quiz-fiv.html')
+        </div>
+      </form>
+      <div class="quiz__prize prize">
+        <div class="prize__body">
+          <div class="prize__title">После прохождения опроса вы получите:</div>
+          <div class="prize__items">
+            <div class="prize__item">Бесплатную консультацию педагога</div>
+            <div class="prize__item">Бесплатный первый урок</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

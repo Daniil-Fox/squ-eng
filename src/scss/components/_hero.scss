@@ -1,0 +1,51 @@
+.hero {
+  padding-top: 220px;
+  padding-bottom: 92px;
+
+  background-image: url('./../img/hero.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
+
+  @media (min-width: 1440px) {
+    background-image: url('./../img/hero-2x.webp');
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    max-width: 750px;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 42px;
+    font-family: var(--third-family);
+    font-weight: 400;
+    font-size: 36px;
+    color: #43513f;
+
+    span {
+      color: #ff5c00;
+    }
+  }
+
+  &__desc {
+    margin: 0;
+    margin-bottom: 106px;
+    font-weight: 300;
+    font-size: 28px;
+    color: #43513f;
+  }
+
+  &__btn {
+    margin-bottom: 18px;
+  }
+
+  &__extra {
+    margin: 0;
+    font-weight: 600;
+    font-size: 24px;
+    color: #fff;
+  }
+}

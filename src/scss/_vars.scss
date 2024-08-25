@@ -1,0 +1,24 @@
+// если вы хотите использовать sass-переменные - удалите root
+// colors
+:root {
+  // base
+  --font-family: "Inter", sans-serif;
+  --second-family: "Plus Jakarta Sans", sans-serif;
+  --third-family: "Kanotie Deco", sans-serif;
+  --font3: "Nunito Sans", sans-serif;
+  --content-width: 1020px;
+  --container-offset: 15px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  // colors
+  --light-color: #fff;
+
+
+}
+
+.iti {
+  --iti-path-flags-1x: url('../img/flags.webp');
+  --iti-path-flags-2x: url('../img/flags@2x.webp');
+  --iti-path-globe-1x: url('../img/globe.webp');
+  --iti-path-globe-2x: url('../img/globe@2x.webp');
+}

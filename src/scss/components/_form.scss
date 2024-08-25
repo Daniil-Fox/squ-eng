@@ -1,0 +1,69 @@
+.form {
+  &__capture {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 400;
+    font-size: 24px;
+    color: #43513f;
+  }
+
+  &__label,
+  .iti {
+    display: block;
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+
+    &:last-of-type {
+      margin-bottom: 64px;
+    }
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    height: 56px;
+    border: 2px solid #89a280;
+    border-radius: 30px;
+    background: #f7f7f7;
+    padding: 12px 32px;
+    font-size: 20px;
+    color: rgba(67, 81, 63, 1);
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 20px;
+      color: rgba(67, 81, 63, 0.6);
+    }
+  }
+
+  .iti__selected-dial-code {
+    font-size: 20px;
+    color: rgba(67, 81, 63, 1);
+  }
+
+  &__btn {
+    margin-bottom: 16px;
+    width: 100%;
+    padding: 16px 32px;
+    font-size: 20px;
+  }
+
+  &__agree {
+    display: block;
+    max-width: 400px;
+    margin: 0 auto;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: #43513f;
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+    }
+  }
+}

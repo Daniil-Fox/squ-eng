@@ -1,0 +1,392 @@
+.quiz {
+  padding: 30px 0;
+  padding-top: 60px;
+
+  &__title {
+    margin-bottom: 42px;
+  }
+
+  &__desc {
+    margin: 0;
+    margin-bottom: 24px;
+    max-width: 602px;
+    font-weight: 400;
+    font-size: 20px;
+    color: #43513f;
+  }
+
+  &__slide {
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 27px 44px;
+    min-height: 486px;
+    overflow: visible;
+  }
+
+  &__counter {
+    display: block;
+    margin-bottom: 18px;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 28px;
+    color: #ff5c00;
+  }
+
+  &__content {
+    padding-left: 20px;
+  }
+
+  &__capture {
+    max-width: 450px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 24px;
+    color: #43513f;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+  }
+
+  &__slider {
+    grid-column: 8 span;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  &__prize {
+    grid-column: 4 span;
+  }
+
+  &__text {
+    max-width: 450px;
+    margin: 0;
+    margin-bottom: 36px;
+
+    font-style: italic;
+    font-weight: 400;
+    font-size: 20px;
+    color: #778f6f;
+  }
+
+  &__emotions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 96px;
+
+    max-width: 410px;
+  }
+
+  &__icon {
+    width: 35px;
+    height: 35px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__inp {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 20px;
+    color: rgba(67, 81, 63, 0.7);
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+
+    div {
+      width: 21px;
+      height: 21px;
+      border: 2px solid #ff5c00;
+      border-radius: 100%;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 2px;
+        border-radius: 100%;
+        background: linear-gradient(44deg, #ff612f 0%, #ffa800 100%);
+
+        opacity: 0;
+      }
+    }
+
+    input:checked {
+      &+div::before {
+        opacity: 1;
+      }
+    }
+  }
+
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    margin-bottom: 26px;
+  }
+
+  &__connect {
+    &>span {
+      display: block;
+      margin-bottom: 18px;
+      font-weight: 600;
+      font-size: 20px;
+      color: #43513f;
+    }
+  }
+
+  &__tel {
+    margin-bottom: 12px;
+
+
+    &>span {
+      margin-bottom: 10px;
+      display: block;
+      font-weight: 400;
+      font-size: 16px;
+      color: #43513f;
+    }
+  }
+
+  &__btn {
+    font-size: 20px;
+    padding: 12px 32px;
+    width: 100%;
+    max-width: 430px;
+    text-transform: inherit;
+  }
+
+  .iti {
+    width: 100%;
+    max-width: 430px;
+  }
+
+  &__number {
+    display: block;
+    width: 100%;
+    max-width: 430px;
+    height: 48px;
+    padding: 12px 32px;
+    border: 2px solid #ff5c00;
+    border-radius: 30px;
+    padding: 12px 32px;
+
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    text-transform: lowercase;
+    color: #43513f;
+
+    &::placeholder {
+      font-weight: 400;
+      color: rgba(67, 81, 63, 0.6);
+    }
+  }
+
+  .iti__selected-dial-code {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    text-transform: lowercase;
+    color: #43513f;
+  }
+}
+
+
+
+.prize {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 4;
+
+
+
+  &__title {
+    margin: 0;
+    margin-bottom: 31px;
+    font-weight: 600;
+    font-size: 24px;
+    color: #ff5c00;
+  }
+
+  &__body {
+    position: relative;
+
+    min-height: 370px;
+    padding: 50px 30px;
+    padding-bottom: 100px;
+    background: rgba(207, 217, 167, 0.2);
+    border-radius: 30px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -15px;
+      top: -20px;
+      width: 64px;
+      height: 64px;
+      border-radius: 10px;
+      background-color: #FF5C00;
+
+      background-image: url('./../img/prize-icon.svg');
+      background-size: 85%;
+      background-position: center;
+      background-repeat: no-repeat;
+      transform: rotate(-16deg);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      right: 0;
+      top: 0;
+      transform: translate(40%, -40%);
+      width: 250px;
+      height: 250px;
+      background-image: url(./../img/party.svg);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__items {
+    height: 112px;
+    position: relative;
+  }
+
+  &__item {
+    position: absolute;
+    white-space: nowrap;
+    transform: rotate(4deg);
+    border-radius: 30px;
+    padding: 8px 16px;
+
+    font-weight: 600;
+    font-size: 20px;
+    color: #fff;
+
+    background-color: #cfd9a7;
+
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+
+    &:nth-child(1) {
+      top: 0;
+      right: -50px;
+    }
+
+    &:nth-child(2) {
+      bottom: 0;
+      right: -15px;
+      transform: rotate(-3deg);
+      background-color: #89a280;
+    }
+  }
+}
+
+
+
+.emog {
+  cursor: pointer;
+
+  &__status {
+    text-align: center;
+    font-weight: 400;
+    font-size: 20px;
+    color: rgba(67, 81, 63, 0.7);
+    transition: .3s ease-out;
+  }
+
+  &__img {
+    margin-bottom: 8px;
+    width: 148px;
+    height: 85px;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: -5px;
+      width: 28px;
+      height: 28px;
+      display: none;
+      background-image: url('./../img/emog/check.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  @include hover {
+    .emog__status {
+      text-shadow: 0 0 2px currentColor;
+    }
+  }
+
+  input:checked+.emog__img::after {
+    display: block;
+  }
+
+  input:checked~.emog__status {
+    text-shadow: 0 0 2px currentColor;
+  }
+}
+
+
+.quiz__hobbie {
+  .quiz__inp:not(:last-child) {
+    margin-bottom: 5px;
+  }
+}
+
+
+
+.qc-item {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 400;
+  font-size: 20px;
+  color: rgba(67, 81, 63, 0.7);
+
+  &__icon {
+    width: 40px;
+    height: 40px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  input:checked~span {
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,25 @@
+// базовые подключения
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+
+// подключения компонентов страницы
+@import "./components/header";
+@import "./components/nav";
+@import "./components/hero";
+@import "./components/useful";
+@import "./components/others";
+@import "./components/benefits";
+@import "./components/first-lesson";
+@import "./components/need";
+@import "./components/every";
+@import "./components/course";
+@import "./components/quiz";
+@import "./components/teachers";
+@import "./components/testi";
+@import "./components/plan";
+@import "./components/garant";
+@import "./components/footer";
+@import "./components/modal";
+@import "./components/form";

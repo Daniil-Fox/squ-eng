@@ -1,0 +1,65 @@
+.footer {
+  background-color: #43513f;
+  padding: 60px 0;
+
+  &__container {
+    position: relative;
+    z-index: 2;
+    max-width: calc(1590px + (var(--container-offset) * 2));
+    padding: 0 var(--container-offset);
+    width: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  &__logo {
+    width: 360px;
+    height: 146px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__tel {
+    display: block;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 20px;
+    color: #fff;
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    a {
+      display: block;
+      width: 41px;
+      height: 41px;
+    }
+  }
+
+  &__timetable {
+    font-weight: 600;
+    font-size: 20px;
+    color: #fff;
+    text-align: right;
+
+    span {
+      display: block;
+    }
+  }
+
+  &__btn {
+    font-size: 20px;
+    padding: 12px 24px;
+  }
+}

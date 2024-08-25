@@ -1,0 +1,157 @@
+.first-lesson {
+  padding: 30px 0;
+  padding-bottom: 60px;
+
+  &__header {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 64px;
+
+    margin-bottom: 36px;
+  }
+
+  &__left {
+    max-width: 600px;
+    width: 100%;
+  }
+
+  &__right {
+    flex-grow: 1;
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 36px;
+  }
+
+  &__list {
+    li {
+      padding-left: 30px;
+      position: relative;
+      font-weight: 400;
+      font-size: 20px;
+      color: #43513f;
+
+      &:not(:last-child) {
+        margin-bottom: 12px;
+      }
+
+      span {
+        font-weight: 600;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 17px;
+        height: 17px;
+        border-radius: 100%;
+        background-color: #cfd9a7;
+        border: 2px solid #ff5c00;
+      }
+    }
+  }
+
+  &__btn {
+    font-size: 20px;
+  }
+
+  &__bens {
+    margin-bottom: 36px;
+  }
+
+  &__bottom {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+
+.fl-bens {
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 24px;
+  overflow: hidden;
+
+  display: flex;
+  gap: 24px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    height: 100%;
+    transform: translateX(-100%);
+    width: 8px;
+    top: 0;
+    bottom: 0;
+    background-image: url('./../img/orange-snake.svg');
+    background-position: center;
+    background-size: contain;
+  }
+
+  &__left,
+  &__right {
+    flex: 1;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 12px;
+
+    font-weight: 600;
+    font-size: 24px;
+    color: #43513f;
+
+    span {
+      color: #ff5c00;
+    }
+  }
+
+  &__list {
+
+    li {
+      position: relative;
+      padding-left: 58px;
+      font-weight: 400;
+      font-size: 20px;
+      color: #43513f;
+
+      &:not(:last-child) {
+        margin-bottom: 12px;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 46px;
+        height: 41px;
+
+        background-image: url('./../img/big-check.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+  }
+}
