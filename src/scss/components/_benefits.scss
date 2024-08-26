@@ -1,5 +1,22 @@
 .benefits {
   padding: 30px 0;
+  position: relative;
+  z-index: 2;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    top: 240px;
+    width: 1160px;
+    height: 500px;
+
+    background-image: url('./../img/figures/snake.svg');
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+  }
 
   &__title {
     margin-bottom: 36px;
@@ -79,6 +96,8 @@
 
         &:nth-child(3) {
           grid-column: 5 span;
+          padding-right: 40px;
+          padding-bottom: 50px;
           background-color: #89a280;
         }
       }
@@ -136,6 +155,8 @@
     font-weight: 600;
     font-size: 24px;
     color: #43513f;
+
+    max-width: 435px;
   }
 
   &__icon {

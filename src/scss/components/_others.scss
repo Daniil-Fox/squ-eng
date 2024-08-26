@@ -1,5 +1,40 @@
 .others {
   padding: 30px 0;
+  position: relative;
+  z-index: 2;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    z-index: -1;
+    width: 500px;
+    height: 500px;
+    top: -120px;
+    left: 0;
+
+    background-image: url('./../img/figures/square.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left top;
+  }
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    z-index: -1;
+    width: 350px;
+    height: 350px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+
+    background-image: url('./../img/figures/star.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+  }
 
   &__title {
     margin-bottom: 42px;
@@ -20,7 +55,7 @@
   padding-bottom: 42px;
   border-radius: 30px;
   overflow: hidden;
-
+  position: relative;
   display: flex;
   gap: 36px;
 
@@ -28,6 +63,20 @@
   &:nth-child(3n + 1) {
     .o-item__content::after {
       top: -27px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 356px;
+
+      background-image: url('./../img/figures/vent.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: top right;
     }
   }
 

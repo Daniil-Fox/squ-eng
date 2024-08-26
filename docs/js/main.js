@@ -8532,6 +8532,8 @@ class JustValidate {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_sliders_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/sliders.js */ "./src/js/components/sliders.js");
+/* harmony import */ var _components_tabs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/tabs.js */ "./src/js/components/tabs.js");
+
 
 
 /***/ }),
@@ -8561,6 +8563,37 @@ quizInputs.forEach(el => {
     }, 100);
   });
 });
+
+/***/ }),
+
+/***/ "./src/js/components/tabs.js":
+/*!***********************************!*\
+  !*** ./src/js/components/tabs.js ***!
+  \***********************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const tabsBlocks = document.querySelectorAll('.plan__block');
+if (tabsBlocks.length > 0) {
+  tabsBlocks.forEach(block => {
+    const tabs = block.querySelectorAll('.plan__btn');
+    const contents = block.querySelectorAll('.plan__content');
+    function clear() {
+      contents.forEach(el => el.classList.remove('active'));
+      tabs.forEach(el => el.classList.remove('active'));
+    }
+    tabs.forEach(tab => {
+      const dataset = tab.dataset.plan;
+      const content = block.querySelector(`[data-plan-content="${dataset}"]`);
+      tab.addEventListener('click', e => {
+        clear();
+        tab.classList.add('active');
+        content.classList.add('active');
+      });
+    });
+  });
+}
 
 /***/ }),
 
