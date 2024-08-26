@@ -1,8 +1,17 @@
 .garant {
   padding: 30px 0;
 
+  @include small-tablet {
+    padding: 0;
+    padding-bottom: 40px;
+  }
+
   &__title {
     margin-bottom: 42px;
+
+    @include mobile {
+      margin-bottom: 36px;
+    }
   }
 
   &__items {
@@ -11,6 +20,10 @@
     gap: 24px;
 
     position: relative;
+
+    @include mobile {
+      display: block;
+    }
 
     &::after {
       content: "";
@@ -25,6 +38,16 @@
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
+
+      @include mobile {
+        transform: rotate(0);
+        bottom: unset;
+        width: 140px;
+        height: 110px;
+        top: 30%;
+        left: unset;
+        right: 0;
+      }
     }
   }
 
@@ -35,27 +58,45 @@
     svg {
       width: 70px;
       height: 70px;
+
+      @include mobile {
+        width: 53px;
+        height: 60px;
+        margin-left: 5px;
+      }
     }
   }
 
   &__item {
     border-radius: 30px;
     padding: 50px 31px;
+    font-size: 24px;
+
+    @include mobile {
+      font-size: 20px;
+      display: flex;
+      flex-direction: row-reverse;
+      padding: 30px 25px;
+      min-height: 168px;
+    }
 
     &:nth-child(1) {
       background-color: #cfd9a7;
       grid-column: 5 span;
 
       font-weight: 600;
-      font-size: 24px;
       color: #ff5c00;
+
+      @include mobile {
+        margin-bottom: 16px;
+      }
     }
 
     &:nth-child(2) {
       grid-column: 7 span;
       background-color: #89a280;
       font-weight: 400;
-      font-size: 24px;
+
       color: #fff;
     }
   }

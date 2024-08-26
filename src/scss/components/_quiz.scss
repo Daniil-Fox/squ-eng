@@ -2,6 +2,16 @@
   padding: 30px 0;
   padding-top: 60px;
 
+  @include tablet {
+    padding-top: 60px;
+    padding-bottom: 20px;
+  }
+
+  @media(max-width: 950px) {
+    padding: 0;
+    padding-bottom: 40px;
+  }
+
   &__title {
     margin-bottom: 42px;
   }
@@ -21,6 +31,11 @@
     padding: 27px 44px;
     min-height: 486px;
     overflow: visible;
+
+    @media(max-width: 950px) {
+      padding: 27px;
+      height: auto;
+    }
   }
 
   &__counter {
@@ -30,10 +45,18 @@
     font-weight: 600;
     font-size: 28px;
     color: #ff5c00;
+
+    @media(max-width: 950px) {
+      font-size: 24px;
+    }
   }
 
   &__content {
     padding-left: 20px;
+
+    @media(max-width: 950px) {
+      padding: 0;
+    }
   }
 
   &__capture {
@@ -42,12 +65,24 @@
     font-weight: 600;
     font-size: 24px;
     color: #43513f;
+
+    @media(max-width: 950px) {
+      font-size: 20px;
+    }
   }
 
   &__wrapper {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 24px;
+
+    @include tablet {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    @media(max-width: 950px) {
+      display: block;
+    }
   }
 
   &__slider {
@@ -55,10 +90,22 @@
     min-width: 0;
     max-width: 100%;
     margin: 0;
+
+    @include tablet {
+      grid-column: 4 span;
+    }
+
+    @media(max-width: 950px) {
+      margin-bottom: 24px;
+    }
   }
 
   &__prize {
     grid-column: 4 span;
+
+    @include tablet {
+      grid-column: 2 span;
+    }
   }
 
   &__text {
@@ -70,6 +117,11 @@
     font-weight: 400;
     font-size: 20px;
     color: #778f6f;
+
+    @media(max-width: 950px) {
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
   }
 
   &__emotions {
@@ -78,6 +130,10 @@
     gap: 12px 96px;
 
     max-width: 410px;
+
+    @media(max-width: 950px) {
+      gap: 12px;
+    }
   }
 
   &__icon {
@@ -137,6 +193,12 @@
     gap: 24px;
 
     margin-bottom: 26px;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
   }
 
   &__connect {
@@ -223,6 +285,27 @@
     font-weight: 600;
     font-size: 24px;
     color: #ff5c00;
+
+    @media(max-width: 950px) {
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      &::before {
+        content: "";
+        display: block;
+        flex-shrink: 0;
+        width: 45px;
+        height: 45px;
+        background-image: url('./../img/prize-icon.svg');
+        background-size: 85%;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        background-color: #FF5C00;
+      }
+    }
   }
 
   &__body {
@@ -233,6 +316,11 @@
     padding-bottom: 100px;
     background: rgba(207, 217, 167, 0.2);
     border-radius: 30px;
+
+    @media(max-width: 950px) {
+      min-height: unset;
+      padding: 35px 24px;
+    }
 
     &::before {
       content: "";
@@ -249,6 +337,10 @@
       background-position: center;
       background-repeat: no-repeat;
       transform: rotate(-16deg);
+
+      @media(max-width: 950px) {
+        display: none;
+      }
     }
 
     &::after {
@@ -270,6 +362,16 @@
   &__items {
     height: 112px;
     position: relative;
+
+    @media(max-width: 950px) {
+      height: auto;
+    }
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
   }
 
   &__item {
@@ -285,6 +387,14 @@
 
     background-color: #cfd9a7;
 
+    @media(max-width: 950px) {
+      position: static;
+      width: auto;
+      display: inline-block;
+      white-space: inherit;
+
+    }
+
     &:not(:last-child) {
       margin-bottom: 25px;
     }
@@ -292,6 +402,10 @@
     &:nth-child(1) {
       top: 0;
       right: -50px;
+
+      @media(max-width: 950px) {
+        max-width: 80%;
+      }
     }
 
     &:nth-child(2) {
@@ -307,6 +421,9 @@
 
 .emog {
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &__status {
     text-align: center;
@@ -314,6 +431,8 @@
     font-size: 20px;
     color: rgba(67, 81, 63, 0.7);
     transition: .3s ease-out;
+
+
   }
 
   &__img {
@@ -321,6 +440,11 @@
     width: 148px;
     height: 85px;
     position: relative;
+
+    @include mobile {
+      width: 120px;
+      height: 75px;
+    }
 
     img {
       width: 100%;

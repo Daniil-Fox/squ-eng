@@ -4,6 +4,11 @@
   padding-bottom: 54px;
   padding-top: 60px;
 
+  @include small-tablet {
+    padding: 0;
+    padding-bottom: 40px;
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -17,6 +22,10 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: left;
+
+    @include small-tablet {
+      display: none;
+    }
   }
 
   &::after {
@@ -28,6 +37,10 @@
     width: 100%;
     height: calc(100% - 390px);
     background: rgba(207, 217, 167, 0.3);
+
+    @include small-tablet {
+      display: none;
+    }
   }
 
   &__title {
@@ -41,6 +54,22 @@
     z-index: 2;
     display: flex;
     gap: 48px;
+
+    @include small-tablet {
+      gap: 24px;
+    }
+
+    @include mobile {
+      gap: 12px;
+    }
+  }
+
+  &__content {
+    display: none;
+
+    &.active {
+      display: block;
+    }
   }
 
   &__tab {
@@ -61,6 +90,11 @@
     transition: .3s ease-out;
     overflow: hidden;
     background-color: #fff;
+
+    @include small-tablet {
+      font-size: 16px;
+      padding: 12px 16px;
+    }
 
     &::after {
       content: "";
@@ -87,6 +121,10 @@
 
 
 .every__stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
   img {
     position: absolute;
 
@@ -95,6 +133,19 @@
       height: 90px;
       right: 140px;
       bottom: 80px;
+
+      @include tablet {
+        right: 148px;
+        bottom: 50px;
+      }
+
+      @include mobile {
+        width: 48px;
+        height: 48px;
+        right: 57px;
+        bottom: 0%;
+        transform: translate(0%, 100%);
+      }
     }
 
     &:nth-child(2) {
@@ -103,6 +154,20 @@
       right: 50px;
       bottom: 0;
       transform: translateY(50%);
+
+      @include tablet {
+        width: 170px;
+        height: 170px;
+        transform: rotate(-60deg) translateY(40%);
+      }
+
+      @include mobile {
+        right: -10px;
+        bottom: 0;
+        width: 95px;
+        height: 95px;
+        transform: rotate(-90deg) translate(-60%, 20%);
+      }
     }
   }
 }
@@ -114,6 +179,13 @@
     gap: 24px;
 
     margin-bottom: 36px;
+
+    @include mobile {
+      position: relative;
+      z-index: 2;
+      display: block;
+      margin-bottom: 0;
+    }
   }
 
   &__themes {
@@ -121,6 +193,8 @@
     background-color: #fff;
     border-radius: 30px;
     padding: 32px 24px;
+
+
   }
 
   &__title {
@@ -147,6 +221,11 @@
     font-size: 16px;
     color: #fff;
     background-color: #89a280;
+
+    @include mobile {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
   }
 
   &__images {
@@ -154,6 +233,10 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &__img {
@@ -175,6 +258,19 @@
     }
   }
 
+  &__content {
+    @include small-tablet {
+      margin: 0 calc(-1 * var(--container-offset));
+      margin-top: -30px;
+
+      padding: 0 var(--container-offset);
+      padding-top: 60px;
+      padding-bottom: 48px;
+      border-radius: 30px;
+      background: rgba(207, 217, 167, 0.3);
+    }
+  }
+
   &__capture {
     margin: 0;
     margin-bottom: 24px;
@@ -182,6 +278,10 @@
     font-weight: 600;
     font-size: 24px;
     color: #43513f;
+
+    @include mobile {
+      margin-bottom: 12px;
+    }
   }
 
   &__list {

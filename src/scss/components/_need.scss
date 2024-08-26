@@ -3,6 +3,11 @@
   position: relative;
   z-index: 2;
 
+  @include small-tablet {
+    padding: 0;
+    padding-bottom: 40px;
+  }
+
   &__container {
     background-color: #cfd9a7;
     border-radius: 30px;
@@ -12,6 +17,13 @@
     justify-content: space-between;
     gap: 20px;
     position: relative;
+
+    @include small-tablet {
+      flex-wrap: wrap;
+      padding: 20px;
+      padding-left: 27px;
+      padding-bottom: 46px;
+    }
 
     &::after {
       content: "";
@@ -52,6 +64,14 @@
     font-weight: 600;
     font-size: 32px;
     color: #43513f;
+
+    @include small-tablet {
+      font-size: 28px;
+    }
+
+    @include mobile {
+      font-size: 24px;
+    }
   }
 
   &__items {
@@ -60,6 +80,12 @@
     align-items: center;
     gap: 12px 24px;
     max-width: 508px;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 15px;
+    }
   }
 
   &__item {
@@ -70,5 +96,24 @@
     font-weight: 600;
     font-size: 16px;
     color: #fff;
+
+    &:nth-child(2) {
+      @include mobile {
+        order: -1;
+        transform: rotate(5deg);
+      }
+    }
+
+    &:nth-child(1) {
+      @include mobile {
+        transform: rotate(-2deg);
+      }
+    }
+
+    &:nth-child(3) {
+      @include mobile {
+        transform: rotate(1deg);
+      }
+    }
   }
 }

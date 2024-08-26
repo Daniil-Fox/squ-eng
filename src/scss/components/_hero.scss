@@ -11,13 +11,24 @@
     background-image: url('./../img/hero-2x.webp');
   }
 
+  @media (max-width: 1200px) {
+    padding-top: 264px;
+    padding-bottom: 116px;
+    background-position: 80%;
+  }
+
+  @include small-tablet {
+    padding-top: 122px;
+    padding-bottom: 30px;
+  }
+
   &__content {
     position: relative;
     z-index: 2;
     max-width: 750px;
 
     @media (max-width: 1440px) {
-      max-width: 555px;
+      max-width: 590px;
     }
   }
 
@@ -28,6 +39,20 @@
     font-weight: 400;
     font-size: 36px;
     color: #43513f;
+
+    @include tablet {
+      margin-bottom: 52px;
+    }
+
+    @include small-tablet {
+      font-size: 28px;
+      margin-bottom: 24px;
+      max-width: 345px;
+    }
+
+    @include mobile {
+      font-size: 20px;
+    }
 
     span {
       color: #ff5c00;
@@ -40,10 +65,32 @@
     font-weight: 300;
     font-size: 28px;
     color: #43513f;
+
+    @include tablet {
+      margin-bottom: 175px;
+    }
+
+    @include small-tablet {
+      font-size: 24px;
+      max-width: 350px;
+      margin-bottom: 104px;
+    }
+
+    @include mobile {
+      font-size: 16px;
+      max-width: 190px;
+    }
   }
 
   &__btn {
     margin-bottom: 18px;
+    padding: 20px 32px;
+    letter-spacing: 0.02em;
+
+    @include small-tablet {
+      font-size: 16px;
+      padding: 16px;
+    }
   }
 
   &__extra {
@@ -51,5 +98,13 @@
     font-weight: 600;
     font-size: 24px;
     color: #fff;
+
+    @include tablet {
+      font-size: 20px;
+    }
+
+    @include small-tablet {
+      display: none;
+    }
   }
 }

@@ -8533,8 +8533,38 @@ class JustValidate {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_sliders_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/sliders.js */ "./src/js/components/sliders.js");
 /* harmony import */ var _components_tabs_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/tabs.js */ "./src/js/components/tabs.js");
+/* harmony import */ var _components_every_tabs_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/every-tabs.js */ "./src/js/components/every-tabs.js");
 
 
+
+
+/***/ }),
+
+/***/ "./src/js/components/every-tabs.js":
+/*!*****************************************!*\
+  !*** ./src/js/components/every-tabs.js ***!
+  \*****************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const everyTabs = document.querySelectorAll('.every__tab');
+const tabsContent = document.querySelectorAll('.every__content');
+if (everyTabs.length > 0) {
+  function clearActive() {
+    everyTabs.forEach(el => el.classList.remove('active'));
+    tabsContent.forEach(el => el.classList.remove('active'));
+  }
+  everyTabs.forEach(tab => {
+    tab.addEventListener('click', e => {
+      const dataset = tab.dataset.every;
+      const content = document.querySelector(`.every__content[data-every-content="${dataset}"]`);
+      clearActive();
+      tab.classList.add('active');
+      content.classList.add('active');
+    });
+  });
+}
 
 /***/ }),
 
