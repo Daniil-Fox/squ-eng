@@ -5,8 +5,81 @@
     margin-bottom: 33px;
   }
 
+  &__dawn,
+  &__spiral,
+  &__spiral2,
+  &__spiral3,
+  &__spiral4,
+  &__spiral5,
+  &__star {
+    position: absolute;
+    user-select: none;
+    pointer-events: none;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__star {
+    width: 108px;
+    height: 108px;
+    top: 0;
+    left: 0;
+    transform: translate(-40%, -40%);
+  }
+
+  &__spiral5 {
+    z-index: 2;
+    width: 65px;
+    height: 80px;
+    bottom: 0;
+    right: 0;
+    transform: translate(60%, 45%);
+  }
+
+  &__dawn {
+    width: 328px;
+    height: 328px;
+    left: 0px;
+    bottom: 0px;
+    transform: translateX(-80%);
+  }
+
+  &__spiral {
+    width: 65px;
+    height: 80px;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-55%);
+  }
+
+  &__spiral2 {
+    width: 356px;
+    height: 356px;
+    top: 0;
+    right: 0;
+    transform: translate(40%, -10%);
+  }
+
+  &__spiral3 {
+    width: 218px;
+    height: 271px;
+    top: 325px;
+    left: -207px;
+  }
+
+  &__spiral4 {
+    width: 336px;
+    height: 356px;
+    bottom: 0;
+    right: 0;
+    transform: translate(45%, 30%);
+  }
+
   &__row {
-    margin-bottom: 42px;
     position: relative;
     z-index: 2;
     display: flex;
@@ -17,6 +90,11 @@
   &__btn {
     font-size: 20px;
     padding: 20px 32px;
+
+    @media (max-width: 950px) {
+      font-size: 16px;
+      padding: 12px 16px;
+    }
 
     &.active {
       background-color: #ff5c00;
@@ -33,6 +111,10 @@
 
   &__right {
     gap: 12px;
+
+    @media (max-width: 950px) {
+      display: none;
+    }
   }
 
   &__disc {
@@ -55,20 +137,47 @@
 
   &__content {
     position: relative;
+    padding-top: 42px;
     z-index: 2;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-
     display: none;
+    overflow: visible;
+
+    @include small-tablet {
+      overflow: hidden;
+    }
+
+    .swiper-wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+
+      @include small-tablet {
+        display: flex;
+        gap: 0;
+      }
+    }
 
     &.active {
-      display: grid;
+      display: block;
     }
   }
 
   &__block {
+    position: relative;
+
     &:not(:last-child) {
       margin-bottom: 50px;
+    }
+  }
+
+
+  &__pagination {
+    margin-top: 21px;
+    display: flex;
+    justify-content: center;
+
+    .swiper-pagination-bullet {
+      background-color: #FF5C00;
     }
   }
 }
@@ -78,7 +187,7 @@
   position: relative;
   padding: 35px 28px;
   padding-top: 63px;
-  border: 1px solid #ff5c00;
+
   border-radius: 30px;
   background-color: #fff;
   display: flex;
@@ -86,8 +195,16 @@
   justify-content: space-between;
   min-height: 550px;
 
-  &::before {
-    content: "";
+  @media (max-width: 950px) {
+    padding: 28px 14px 32px;
+    min-height: 478px;
+  }
+
+  @include small-tablet {
+    width: 270px;
+  }
+
+  &__back {
     position: absolute;
     z-index: -1;
     border-radius: 30px;
@@ -99,7 +216,21 @@
     transform: rotate(2deg);
   }
 
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: inherit;
+    border: 1px solid #ff5c00;
+  }
+
   &__header {
+    position: relative;
+    z-index: 2;
     text-align: center;
     width: 100%;
     margin: 0 auto;
@@ -114,7 +245,12 @@
     font-size: 32px;
     color: #43513f;
     text-transform: uppercase;
+
+    @media (max-width: 950px) {
+      font-size: 28px;
+    }
   }
+
 
   &__old {
     margin: 0;
@@ -124,6 +260,11 @@
     text-decoration: line-through;
     text-align: center;
     color: rgba(67, 81, 63, 0.6);
+
+    @media (max-width: 950px) {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
   }
 
   &__price {
@@ -132,12 +273,20 @@
     font-weight: 600;
     font-size: 48px;
     color: #43513f;
+
+    @media (max-width: 950px) {
+      font-size: 40px;
+    }
   }
 
   &__for {
     font-weight: 500;
     font-size: 24px;
     color: #43513f;
+
+    @media (max-width: 950px) {
+      font-size: 20px;
+    }
   }
 
   &__bottom {
@@ -148,6 +297,10 @@
   &__btn {
     width: 100%;
     font-size: 16px;
+
+    @media (max-width: 950px) {
+      padding: 12px;
+    }
   }
 
   &__cost {
@@ -164,6 +317,10 @@
       font-weight: 400;
       font-size: 16px;
       color: rgba(67, 81, 63, 0.7);
+
+      @media (max-width: 950px) {
+        padding-left: 29px;
+      }
 
       &:not(:last-child) {
         margin-bottom: 8px;
@@ -201,5 +358,10 @@
     border-radius: 50px;
     padding: 15px 17px;
     transform: rotate(14deg);
+
+    @media (max-width: 950px) {
+      padding: 10px 6px;
+      right: 0;
+    }
   }
 }

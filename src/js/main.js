@@ -109,7 +109,7 @@ validateForms('.modal__form', rules2, [], afterForm);
 
 
 
-const modal = document.querySelector('.modal')
+const modal = document.querySelector('.modal-form')
 
 if(modal){
   const modalButtons = document.querySelectorAll('.modal-btn')
@@ -130,6 +130,19 @@ if(modal){
   })
 }
 
+
+const modalWindows = document.querySelectorAll('.modal')
+if(modalWindows.length > 0){
+  modalWindows.forEach(mod => {
+    const modalBody = mod.querySelector('.modal__body')
+    const modalVideo = mod.querySelector('video')
+    modalBody?.addEventListener('click', e => e.stopPropagation())
+    modalVideo?.addEventListener('click', e => e.stopPropagation())
+    mod?.addEventListener('click', e => {
+      mod.classList.remove('active')
+    })
+  })
+}
 
 
 const menuBtn = document.querySelector('.header__burger')
@@ -158,4 +171,13 @@ menuItems.forEach(item => {
     menuItems.forEach(el => el.classList.remove('active'))
     item.classList.add('active')
   })
+})
+
+
+const benefitsItemProb = document.querySelector('.benefits__row--triple .b-item:last-of-type')
+const brow = document.querySelector('.benefits__row--triple')
+brow.style.setProperty('--img-height', benefitsItemProb.scrollHeight + 'px')
+
+window.addEventListener('resize', e => {
+  brow.style.setProperty('--img-height', benefitsItemProb.scrollHeight + 'px')
 })

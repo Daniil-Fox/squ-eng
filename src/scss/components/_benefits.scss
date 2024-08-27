@@ -139,6 +139,7 @@
 
           @include small-tablet {
             height: var(--img-height);
+
             top: unset;
             bottom: 0;
             width: 127px;
@@ -177,10 +178,13 @@
           }
 
           @include small-tablet {
+            display: flex;
+            align-items: center;
             padding-left: 138px;
             padding-top: 25px;
             padding-bottom: 24px;
             padding-right: 3px;
+            min-height: 220px;
           }
         }
       }
@@ -219,6 +223,7 @@
   padding: 36px;
   padding-right: 24px;
   border-radius: 30px;
+  position: relative;
 
   @include small-tablet {
     padding: 24px;
@@ -306,5 +311,19 @@
     font-weight: 400;
     font-size: 20px;
     color: #43513f;
+  }
+
+  &__stars {
+    position: absolute;
+    right: 10px;
+    top: -10px;
+    width: 113px;
+    height: 150px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
   }
 }

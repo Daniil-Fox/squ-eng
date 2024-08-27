@@ -42,6 +42,11 @@
     background: #e1e5cf;
     padding: 90px;
     padding-top: 114px;
+
+    @include small-tablet {
+      padding: 40px;
+      margin: 0 10px;
+    }
   }
 
   &__title {
@@ -49,4 +54,12 @@
     font-size: 30px;
     color: #89a280;
   }
+}
+
+.modal-video video {
+  aspect-ratio: 16 / 9;
+  width: 95%;
+
+  object-fit: cover;
+  border-radius: 30px;
 }
